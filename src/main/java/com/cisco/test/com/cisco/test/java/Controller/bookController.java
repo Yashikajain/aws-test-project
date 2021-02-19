@@ -16,6 +16,11 @@ public class bookController {
         @Autowired
         private bookRepository bookRepository;
 
+        @GetMapping("/")
+        public static String home(){
+            return "Hello! My First AWS Deployment using github actions is here!!";
+        }
+
         @PostMapping("/books")
         public book addBook(@RequestBody book Book) {
             return bookRepository.save(Book);
