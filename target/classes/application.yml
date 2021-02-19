@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://yashijai:admin@ip-10-0-0-12.ap-southeast-1.compute.internal/myDB
