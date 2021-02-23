@@ -18,7 +18,7 @@ public class bookController {
 
         @GetMapping("/")
         public static String home(){
-            return "Hello! My First AWS Deployment!! I have used github actions!";
+            return "Hello! My First AWS Deployment!! I have used github actions!!";
         }
 
         @PostMapping("/books")
