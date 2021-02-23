@@ -25,7 +25,7 @@
 
 on:
   release:
-    types: [push]
+    types: push
 
 name: Deploy to Amazon ECS
 
@@ -75,7 +75,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: learn
+        container-name: yashijai-test-container
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
