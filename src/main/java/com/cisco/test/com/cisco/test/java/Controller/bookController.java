@@ -18,7 +18,7 @@ public class bookController {
 
         @GetMapping("/health")
         public String home(){
-            return "Hello!!!Hi!! This is My First AWS Deployment!!";
+            return "Hello! This is My First AWS Deployment to EC2 Instance!!";
         }
 
         @PostMapping("/books")
@@ -32,32 +32,5 @@ public class bookController {
             return ResponseEntity.ok(bookRepository.findAll());
         }
 
-
-        /*@GetMapping("employees/{id}")
-        public ResponseEntity<book> findBookByName(@PathVariable(value = "id") Integer employeeId) {
-            Employee employee = employeeRepository.findById(employeeId).orElseThrow(
-                    () -> new ResourceNotFoundException("Employee not found" + employeeId));
-            return ResponseEntity.ok().body(employee);
-        }
-
-        @PutMapping("employees/{id}")
-        public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Integer employeeId,
-                                                       @RequestBody Employee employeeDetails) {
-            Employee employee = employeeRepository.findById(employeeId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-            employee.setName(employeeDetails.getName());
-            final Employee updatedEmployee = employeeRepository.save(employee);
-            return ResponseEntity.ok(updatedEmployee);
-
-        }
-*/
-        /*@DeleteMapping("books/{id}")
-        public ResponseEntity<Void> deleteEmployee(@PathVariable(value = "id") Integer employeeId) {
-            Employee employee = employeeRepository.findById(employeeId).orElseThrow(
-                    () -> new ResourceNotFoundException("Employee not found" + employeeId));
-            employeeRepository.delete(employee);
-            return ResponseEntity.ok().build();
-        }
-*/
 
 }
