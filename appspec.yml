@@ -1,28 +1,26 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
-    destination: /home/ubuntu/aws-codedeploy
+    destination: /home/ubuntu
+
 permissions:
-  - object: /home/ubuntu
+  - object: /
+    pattern: "**"
     owner: ubuntu
     group: ubuntu
-    type:
-      - directory
-      - file
+
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
   ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
+    - location: scripts/server_stop.sh
+      timeout: 20
+      runas: ubuntu
   ApplicationStart:
-    - location: scripts/reload-pm2.sh
-      timeout: 300
+    - location: scripts/server_start.sh
+      timeout: 20
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/server_validate.sh
+      timeout: 60
       runas: ubuntu
