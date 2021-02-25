@@ -16,8 +16,8 @@ public class bookController {
         @Autowired
         private bookRepository bookRepository;
 
-        @GetMapping("/")
-        public static String home(){
+        @GetMapping("/health")
+        public String home(){
             return "Hello! My First AWS Deployment!! I have used github actions!!";
         }
 
