@@ -18,7 +18,7 @@ public class bookController {
 
         @GetMapping("/health")
         public String home(){
-            return "Hello! This is My First AWS Deployment to EC2 Instance!!";
+            return "Hello! This is My First AWS Deployment to EC2!!";
         }
 
         @PostMapping("/books")
